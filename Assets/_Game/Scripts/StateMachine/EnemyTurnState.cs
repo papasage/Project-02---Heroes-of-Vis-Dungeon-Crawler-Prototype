@@ -15,6 +15,22 @@ public class EnemyTurnState : RPGState
         Debug.Log("Enemy Turn: ...Enter");
         EnemyTurnBegan?.Invoke();
 
-        //StartCoroutine(EnemyThinkingRoutine(_pauseDuration));
+        StartCoroutine(EnemyThinkingRoutine(_pauseDuration));
+    }
+
+    public override void Exit()
+    {
+        Debug.Log("Enemy Turn: Exit...");
+    }
+
+    IEnumerator EnemyThinkingRoutine(float pauseDuration)
+    {
+        Debug.Log("Enemy thinking...");
+        yield return new WaitForSeconds(pauseDuration);
+
+        Debug.Log("Enemy performs action");
+        EnemyTurnEnded?.Invoke();
+        //turn over. Go back to Player
+        StateMachine.ChangeState<PlayerTurnState>();
     }
 }

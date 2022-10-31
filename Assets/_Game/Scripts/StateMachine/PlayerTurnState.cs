@@ -33,7 +33,6 @@ public class PlayerTurnState : RPGState
 
     void OnPressedConfirm()
     {
-        Debug.Log("Attempt to enter Enemy State!");
-        //change the enemy turn state
+        StateMachine.ChangeState<EnemyTurnState>();
     }
 }
