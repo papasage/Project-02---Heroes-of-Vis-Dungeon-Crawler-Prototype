@@ -35,4 +35,16 @@ public class PlayerTurnState : RPGState
     {
         StateMachine.ChangeState<EnemyTurnState>();
     }
+
+    public void PlayerWins()
+    {
+        Debug.Log("Player Turn: Exiting...");
+        StateMachine.ChangeState<WinState>();  
+    }
+
+    public void PlayerLoses()
+    {
+        Debug.Log("Player Turn: Exiting...");
+        StateMachine.ChangeState<LoseState>();
+    }
 }
