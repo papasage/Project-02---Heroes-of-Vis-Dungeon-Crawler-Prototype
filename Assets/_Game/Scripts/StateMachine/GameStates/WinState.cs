@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WinState : RPGState
 {
@@ -28,6 +29,7 @@ public class WinState : RPGState
 
     public void Continue()
     {
-
+        //reload current scene (NEEDS A BETTER SOLUTION FOR ADDING TO ROOM COUNT)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
