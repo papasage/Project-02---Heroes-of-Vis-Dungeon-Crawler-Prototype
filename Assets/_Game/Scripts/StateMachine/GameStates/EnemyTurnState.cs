@@ -9,6 +9,7 @@ public class EnemyTurnState : RPGState
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] Text _enemyAttackAnimation = null;
     [SerializeField] Text _enemyThinkingText = null;
+    [SerializeField] Enemy _enemy;
 
     public override void Enter()
     {
@@ -31,6 +32,9 @@ public class EnemyTurnState : RPGState
         
         //ATTACK ANIMATION START
         _enemyAttackAnimation.gameObject.SetActive(true);
+        //ENEMY ATTACK
+        _enemy.Attack();
+
         yield return new WaitForSeconds(pauseDuration);
         _enemyAttackAnimation.gameObject.SetActive(false);
         //ATTACK ANIMATION END
