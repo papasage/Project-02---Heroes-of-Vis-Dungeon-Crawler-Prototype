@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class EnemyTurnState : RPGState
 {
-    public static event Action EnemyTurnBegan; 
-    public static event Action EnemyTurnEnded;
-
     [SerializeField] float _pauseDuration = 1.5f;
+    [SerializeField] Text _enemyAttackAnimation = null;
+    [SerializeField] Text _enemyThinkingText = null;
 
     public override void Enter()
     {
         Debug.Log("Enemy Turn: ...Enter");
-        EnemyTurnBegan?.Invoke();
-
         StartCoroutine(EnemyThinkingRoutine(_pauseDuration));
     }
 
@@ -25,11 +23,18 @@ public class EnemyTurnState : RPGState
 
     IEnumerator EnemyThinkingRoutine(float pauseDuration)
     {
-        Debug.Log("Enemy thinking...");
+        //ENEMY THINKING START
+        _enemyThinkingText.gameObject.SetActive(true);
         yield return new WaitForSeconds(pauseDuration);
+        _enemyThinkingText.gameObject.SetActive(false);
+        //ENEMY THINKING END
+        
+        //ATTACK ANIMATION START
+        _enemyAttackAnimation.gameObject.SetActive(true);
+        yield return new WaitForSeconds(pauseDuration);
+        _enemyAttackAnimation.gameObject.SetActive(false);
+        //ATTACK ANIMATION END
 
-        Debug.Log("Enemy performs action");
-        EnemyTurnEnded?.Invoke();
         //turn over. Go back to Player
         StateMachine.ChangeState<PlayerTurnState>();
     }

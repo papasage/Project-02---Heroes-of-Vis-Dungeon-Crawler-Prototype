@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerTurnState : RPGState
 {
     [SerializeField] Text _playerTurnTextUI = null;
+    [SerializeField] Text _playerAttackAnimation = null;
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] GameObject _attackMenu;
 
@@ -13,8 +14,6 @@ public class PlayerTurnState : RPGState
 
     public override void Enter()
     {
-        Debug.Log("PlayerTurn: ...Entering");
-        
         //SHOW PLAYER TURN TEXT
         _playerTurnTextUI.gameObject.SetActive(true);
         _attackMenu.SetActive(true);
@@ -34,8 +33,6 @@ public class PlayerTurnState : RPGState
     {
         //disable player turn text
         _playerTurnTextUI.gameObject.SetActive(false);
-        
-        Debug.Log("Player Turn: Exiting...");
 
         //unhook from events
         StateMachine.Input.PressedConfirm -= OnPressedAttackOne;
@@ -78,22 +75,27 @@ public class PlayerTurnState : RPGState
     public void PlayerWins()
     {
         //temp method for winstate button
-        Debug.Log("Player Turn: Exiting...");
         StateMachine.ChangeState<WinState>();  
     }
 
     public void PlayerLoses()
     {
         //temp method for losestate button
-        Debug.Log("Player Turn: Exiting...");
         StateMachine.ChangeState<LoseState>();
     }
 
     IEnumerator PlayerAttackAnimation(float pauseDuration)
     {
-        Debug.Log("player attack animation plays HERE");
         _attackMenu.SetActive(false);
+
+        Debug.Log("player attack animation plays HERE");
+
+        //ATTACK ANIMATION START
+        _playerAttackAnimation.gameObject.SetActive(true);
         yield return new WaitForSeconds(pauseDuration);
+        _playerAttackAnimation.gameObject.SetActive(false);
+        //ATTACK ANIMATION END
+
         StateMachine.ChangeState<EnemyTurnState>();
     }
 }
