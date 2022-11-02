@@ -8,6 +8,7 @@ public class WinState : RPGState
     [SerializeField] Text _playerTurnTextUI = null;
     [SerializeField] GameObject _attackMenu;
     [SerializeField] GameObject _victoryMenu;
+    [SerializeField] MusicManager _music;
 
     public override void Enter() 
     {
@@ -15,6 +16,7 @@ public class WinState : RPGState
         _attackMenu.SetActive(false);
         _playerTurnTextUI.gameObject.SetActive(false);
         _victoryMenu.gameObject.SetActive(true);
+        _music.VictoryMusic();
     }
 
     public override void Exit() 

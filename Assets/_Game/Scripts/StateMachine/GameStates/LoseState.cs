@@ -9,6 +9,7 @@ public class LoseState : RPGState
     [SerializeField] Text _playerTurnTextUI = null;
     [SerializeField] GameObject _attackMenu;
     [SerializeField] GameObject _gameoverMenu;
+    [SerializeField] MusicManager _music;
 
     public override void Enter()
     {
@@ -16,6 +17,7 @@ public class LoseState : RPGState
         _attackMenu.SetActive(false);
         _playerTurnTextUI.gameObject.SetActive(false);
         _gameoverMenu.gameObject.SetActive(true);
+        _music.DefeatMusic();
     }
 
     public override void Exit()
