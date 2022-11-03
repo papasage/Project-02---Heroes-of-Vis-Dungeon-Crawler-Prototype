@@ -47,7 +47,7 @@ public class SetupState : RPGState
         //Setup message on
         _setupWindow.SetActive(true);
 
-        _sfx.MonsterCrySFX();
+        //_sfx.MonsterCrySFX();
 
         yield return new WaitForSeconds(pauseDuration);
         _setupWindow.SetActive(false);

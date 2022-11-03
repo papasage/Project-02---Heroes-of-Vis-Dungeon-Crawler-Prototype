@@ -22,9 +22,9 @@ public class WinState : RPGState
 
     public override void Exit() 
     {
-        _attackMenu.SetActive(true);
-        _playerTurnTextUI.gameObject.SetActive(true);
-        _victoryMenu.gameObject.SetActive(false);
+        //_attackMenu.SetActive(true);
+        //_playerTurnTextUI.gameObject.SetActive(true);
+        //_victoryMenu.gameObject.SetActive(false);
     }
 
     public void Continue()

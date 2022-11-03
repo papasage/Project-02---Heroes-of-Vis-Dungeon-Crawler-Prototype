@@ -15,6 +15,7 @@ public class SFXManager : MonoBehaviour
 
     public void MonsterCrySFX()
     {
+        //called in SetupState. currently disabled
         SFXPlayer.clip = _monsterCry;
         SFXPlayer.loop = false;
         SFXPlayer.Play();
