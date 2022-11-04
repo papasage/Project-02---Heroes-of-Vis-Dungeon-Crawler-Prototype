@@ -10,20 +10,19 @@ public class SetupState : RPGState
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] GameObject _setupWindow;
     [SerializeField] SFXManager _sfx;
+    [SerializeField] Enemy _enemy;
+    [SerializeField] GameObject _enemySprite;
+    [SerializeField] EnemyGenerator _enemyGenerator;
 
     bool _activated = true;
 
     public override void Enter()
     {
         Debug.Log("Setup: ...Entering");
-        Debug.Log("Creating " + _numberOfPlayers + " players.");
-        Debug.Log("Creating deck with " + _startingCardNumber + " cards.");
-        //CANT change state while still in Enter()/Exit() transition
-
+        _enemySprite.SetActive(false);
         StartCoroutine(EnemyAppearsMessage(_pauseDuration));
 
-        //Dont put ChangeState<> here.
-        
+        _enemyGenerator.GenerateEnemy();
     }
 
     public override void Tick()
@@ -52,6 +51,9 @@ public class SetupState : RPGState
         yield return new WaitForSeconds(pauseDuration);
         _setupWindow.SetActive(false);
         //Setup message off
+        _enemySprite.SetActive(true);
+
         StateMachine.ChangeState<PlayerTurnState>();
     }
+
 }

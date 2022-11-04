@@ -10,10 +10,12 @@ public class WinState : RPGState
     [SerializeField] GameObject _attackMenu;
     [SerializeField] GameObject _victoryMenu;
     [SerializeField] MusicManager _music;
+    [SerializeField] GameObject _enemySprite;
 
     public override void Enter() 
     {
         Debug.Log("Player Wins!");
+        _enemySprite.SetActive(false);
         _attackMenu.SetActive(false);
         _playerTurnTextUI.gameObject.SetActive(false);
         _victoryMenu.gameObject.SetActive(true);

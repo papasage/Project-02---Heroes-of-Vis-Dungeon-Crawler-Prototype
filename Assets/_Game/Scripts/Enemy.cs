@@ -12,16 +12,31 @@ public class Enemy : MonoBehaviour
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] TextMeshProUGUI _healthText;
     [SerializeField] TextMeshProUGUI _enemyNameText;
+    public int enemyHealth;
+    [SerializeField] Image _spriteRenderer;
 
     //ScriptableObject Containers
     public string enemyName;
-    public int enemyHealth;
-    public int enemyDamage1;
-    public int enemyDamage2;
+    public Sprite portrait;
+    public int enemyMaxHealth;
+    
+    public string attackname1;
+    public int attackdmg1;
+
+    public string attackname2;
+    public int attackdmg2;
+    
+    public string attackname3;
+    public int attackdmg3;
+    
+    public string attackname4;
+    public int attackdmg4;
 
     private void Start()
     {
         _enemyNameText.text = enemyName;
+        enemyHealth = enemyMaxHealth;
+        _spriteRenderer.sprite = portrait;
     }
     public void TakeDamage(int _amount)
     {
@@ -30,13 +45,23 @@ public class Enemy : MonoBehaviour
 
     public void Attack1()
     {
-        StartCoroutine(PrintLog(_pauseDuration,"Attack1"));
-        _player.TakeDamage(enemyDamage1);
+        StartCoroutine(PrintLog(_pauseDuration, attackname1));
+        _player.TakeDamage(attackdmg1);
     } 
     public void Attack2()
     {
-        StartCoroutine(PrintLog(_pauseDuration, "Attack2"));
-        _player.TakeDamage(enemyDamage2);
+        StartCoroutine(PrintLog(_pauseDuration, attackname2));
+        _player.TakeDamage(attackdmg2);
+    }
+    public void Attack3()
+    {
+        StartCoroutine(PrintLog(_pauseDuration, attackname3));
+        _player.TakeDamage(attackdmg3);
+    }
+    public void Attack4()
+    {
+        StartCoroutine(PrintLog(_pauseDuration, attackname4));
+        _player.TakeDamage(attackdmg4);
     }
 
     IEnumerator PrintLog(float pauseDuration, string attackName)
@@ -63,4 +88,6 @@ public class Enemy : MonoBehaviour
             _enemyLog.text = enemyName + " has died!";
         }
     }
+
+  
 }

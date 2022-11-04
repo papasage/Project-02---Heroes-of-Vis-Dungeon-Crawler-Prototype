@@ -54,6 +54,12 @@ public class EnemyTurnState : RPGState
             case 1:
                 _enemy.Attack2();
                 break;
+            case 2:
+                _enemy.Attack3();
+                break;
+            case 3:
+                _enemy.Attack4();
+                break;
 
             default: break;
         }
