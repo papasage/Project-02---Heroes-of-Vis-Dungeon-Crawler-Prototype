@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Zombo
   portrait: {fileID: 21300000, guid: b15fe9b378c72f34d922faac25681aab, type: 3}
-  enemyHealth: 10
+  enemyHealth: 100
+  fireType: 1
+  earthType: 0
+  waterType: 0
+  windType: 0
   attack1Name: SLASH
   attack1Damage: 1
   attack2Name: BASH

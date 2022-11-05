@@ -32,5 +32,9 @@ public class EnemyGenerator : MonoBehaviour
         _enemy.attackdmg3 = enemyData.attack3Damage;
         _enemy.attackname4 = enemyData.attack4Name;
         _enemy.attackdmg4 = enemyData.attack4Damage;
+        _enemy.fireType = enemyData.fireType;
+        _enemy.earthType = enemyData.earthType;
+        _enemy.waterType = enemyData.waterType;
+        _enemy.windType = enemyData.windType;
     }
 }

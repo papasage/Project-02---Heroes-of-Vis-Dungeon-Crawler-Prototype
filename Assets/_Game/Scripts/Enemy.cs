@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] TextMeshProUGUI _healthText;
     [SerializeField] TextMeshProUGUI _enemyNameText;
+    [SerializeField] SFXManager _sfx;
     public int enemyHealth;
     [SerializeField] Image _spriteRenderer;
 
@@ -32,6 +33,12 @@ public class Enemy : MonoBehaviour
     public string attackname4;
     public int attackdmg4;
 
+    [Header("Enemy Type")]
+    [SerializeField] public bool fireType; 
+    [SerializeField] public bool earthType; 
+    [SerializeField] public bool waterType; 
+    [SerializeField] public bool windType; 
+
     private void Start()
     {
         _enemyNameText.text = enemyName;
@@ -45,21 +52,25 @@ public class Enemy : MonoBehaviour
 
     public void Attack1()
     {
+        _sfx.SlashSFX();
         StartCoroutine(PrintLog(_pauseDuration, attackname1));
         _player.TakeDamage(attackdmg1);
     } 
     public void Attack2()
     {
+        _sfx.SlashSFX();
         StartCoroutine(PrintLog(_pauseDuration, attackname2));
         _player.TakeDamage(attackdmg2);
     }
     public void Attack3()
     {
+        _sfx.SlashSFX();
         StartCoroutine(PrintLog(_pauseDuration, attackname3));
         _player.TakeDamage(attackdmg3);
     }
     public void Attack4()
     {
+        _sfx.SlashSFX();
         StartCoroutine(PrintLog(_pauseDuration, attackname4));
         _player.TakeDamage(attackdmg4);
     }

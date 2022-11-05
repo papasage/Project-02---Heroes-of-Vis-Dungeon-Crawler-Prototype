@@ -17,6 +17,12 @@ public class EnemyData : ScriptableObject
     [Header("Enemy HP")]
     [SerializeField] public int enemyHealth = 1;
 
+    [Header("Enemy Type")]
+    [SerializeField] public bool fireType; 
+    [SerializeField] public bool earthType; 
+    [SerializeField] public bool waterType; 
+    [SerializeField] public bool windType; 
+
     [Header("Attack #1")]
     [SerializeField] public string attack1Name = "SLASH";
     [SerializeField] public int attack1Damage = 1;

@@ -12,26 +12,67 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] Enemy _enemy;
     [SerializeField] Text _playerLog;
+    [SerializeField] SFXManager _sfx;
 
 
-    public void Fire(string _attackName)
+    public void Fire(string _attackName, int _dmgAmount)
     {
-        _playerLog.text = "Flint used: " + _attackName;
-        _enemy.TakeDamage(10);
+        //fire attacks crit on eath elementals
+        _sfx.FireSFX();
+
+        if (_enemy.earthType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount * 2);
+            _playerLog.color = Color.green;
+            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+        }
+        else _enemy.TakeDamage(_dmgAmount);
+             _playerLog.color = Color.white;
+             _playerLog.text = "Flint used: " + _attackName;
     }
-    public void Earth(string _attackName)
+    public void Earth(string _attackName, int _dmgAmount)
     {
+        //earth attacks crit on water elementals
+        _sfx.EarthSFX();
+
+        if (_enemy.waterType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount * 2);
+            _playerLog.color = Color.green;
+            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+        }
+        else _enemy.TakeDamage(_dmgAmount);
+        _playerLog.color = Color.white;
         _playerLog.text = "Flint used: " + _attackName;
-        _enemy.TakeDamage(20);
     } 
-    public void Water(string _attackName)
+    public void Water(string _attackName, int _dmgAmount)
     {
+        //water attacks crit on fire elementals
+        _sfx.WaterSFX();
+
+        if (_enemy.fireType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount * 2);
+            _playerLog.color = Color.green;
+            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+        }
+        else _enemy.TakeDamage(_dmgAmount);
+        _playerLog.color = Color.white;
         _playerLog.text = "Flint used: " + _attackName;
-        _enemy.TakeDamage(30);
     } 
-    public void Wind(string _attackName)
+    public void Wind(string _attackName, int _dmgAmount)
     {
+        //wind attacks crit on wind elementals
+        _sfx.WindSFX();
+
+        if (_enemy.windType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount * 2);
+            _playerLog.color = Color.green;
+            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+        }
+        else _enemy.TakeDamage(_dmgAmount);
+        _playerLog.color = Color.white;
         _playerLog.text = "Flint used: " + _attackName;
-        _enemy.TakeDamage(400);
     }
 }
