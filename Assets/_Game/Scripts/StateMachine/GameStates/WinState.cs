@@ -11,6 +11,7 @@ public class WinState : RPGState
     [SerializeField] GameObject _victoryMenu;
     [SerializeField] MusicManager _music;
     [SerializeField] GameObject _enemySprite;
+    [SerializeField] RoomProgression _roomProgression;
 
     public override void Enter() 
     {

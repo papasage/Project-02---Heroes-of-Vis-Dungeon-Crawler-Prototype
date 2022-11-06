@@ -10,12 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public int playerHealth;
     [SerializeField] TextMeshProUGUI _healthText;
     [SerializeField] Text _playerLog;
-
+    [SerializeField] int roomCount;
 
     private void Start()
     {
         _healthText.color = Color.white;
         playerHealth = _maxHealth;
+
     }
 
     public void TakeDamage(int _amount)

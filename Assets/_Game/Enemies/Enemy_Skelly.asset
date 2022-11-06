@@ -15,15 +15,15 @@ MonoBehaviour:
   enemyName: Skelly
   portrait: {fileID: 21300000, guid: b15fe9b378c72f34d922faac25681aab, type: 3}
   enemyHealth: 100
-  fireType: 1
-  earthType: 0
+  fireType: 0
+  earthType: 1
   waterType: 0
   windType: 0
-  attack1Name: SLASH
-  attack1Damage: 1
-  attack2Name: BASH
-  attack2Damage: 2
-  attack3Name: CRASH
+  attack1Name: SPINE SLASH
+  attack1Damage: 15
+  attack2Name: BONE BASH
+  attack2Damage: 26
+  attack3Name: RIB CRASH
   attack3Damage: 3
-  attack4Name: SMASH
-  attack4Damage: 4
+  attack4Name: SKULL SMASH
+  attack4Damage: 45

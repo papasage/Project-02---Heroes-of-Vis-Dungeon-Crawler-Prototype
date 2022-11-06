@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SetupState : RPGState
 {
@@ -13,12 +14,16 @@ public class SetupState : RPGState
     [SerializeField] Enemy _enemy;
     [SerializeField] GameObject _enemySprite;
     [SerializeField] EnemyGenerator _enemyGenerator;
+    [SerializeField] RoomProgression _roomProgression;
+    [SerializeField] TextMeshProUGUI _roomCountText;
 
     bool _activated = true;
 
     public override void Enter()
     {
         Debug.Log("Setup: ...Entering");
+        _roomProgression.NewRoom();
+
         _enemySprite.SetActive(false);
         StartCoroutine(EnemyAppearsMessage(_pauseDuration));
 
@@ -45,7 +50,7 @@ public class SetupState : RPGState
     {
         //Setup message on
         _setupWindow.SetActive(true);
-
+        _roomCountText.text = "ROOM " + _roomProgression.roomCount.ToString();
         //_sfx.MonsterCrySFX();
 
         yield return new WaitForSeconds(pauseDuration);

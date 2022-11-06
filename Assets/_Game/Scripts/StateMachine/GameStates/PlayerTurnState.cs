@@ -72,28 +72,28 @@ public class PlayerTurnState : RPGState
     public void OnPressedAttackOne()
     {
         //Player uses first attack
-        _playerattack.Fire("FLARE" , 10);
+        _playerattack.Fire("FLARE" , 30);
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
 
     public void OnPressedAttackTwo()
     {
         //Player uses second attack
-        _playerattack.Earth("BREAKER" , 10);
+        _playerattack.Earth("BREAKER" , 30);
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
 
     public void OnPressedAttackThree()
     {
         //Player uses third attack
-        _playerattack.Water("DROWN" , 10);
+        _playerattack.Water("DROWN" , 30);
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
 
     public void OnPressedAttackFour()
     {
         //Player uses fourth attack
-        _playerattack.Wind("VACUUM" , 10);
+        _playerattack.Wind("VACUUM" , 30);
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
         
     }
