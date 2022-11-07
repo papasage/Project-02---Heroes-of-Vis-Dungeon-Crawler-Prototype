@@ -56,13 +56,7 @@ public class PlayerAttack : MonoBehaviour
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
-        else if (_enemy.earthType == true) 
-        {
-            _enemy.TakeDamage(_dmgAmount / 2);
-            _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
-        }
-        else if (_enemy.windType == true)
+        else if (_enemy.earthType || _enemy.windType || _enemy.waterType == true) 
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LoseState : RPGState
 {
@@ -11,6 +12,9 @@ public class LoseState : RPGState
     [SerializeField] GameObject _gameoverMenu;
     [SerializeField] MusicManager _music;
     [SerializeField] RoomProgression _roomProgression;
+    [SerializeField] TextMeshProUGUI _livedToSee;
+    [SerializeField] TextMeshProUGUI _killedBy;
+    [SerializeField] Enemy _enemy;
 
     public override void Enter()
     {
@@ -18,6 +22,10 @@ public class LoseState : RPGState
         _attackMenu.SetActive(false);
         _playerTurnTextUI.gameObject.SetActive(false);
         _gameoverMenu.gameObject.SetActive(true);
+
+        _killedBy.text = "You were felled by a \n" +  _enemy.enemyName;
+        _livedToSee.text = "You lived to see Room " + _roomProgression.roomCount;
+
         _music.DefeatMusic();
         _roomProgression.ResetRooms();
 
