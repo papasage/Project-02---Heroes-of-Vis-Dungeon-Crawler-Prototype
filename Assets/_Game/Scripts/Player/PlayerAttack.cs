@@ -24,19 +24,19 @@ public class PlayerAttack : MonoBehaviour
         {
             _enemy.TakeDamage(_dmgAmount * 2);
             _playerLog.color = Color.green;
-            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
         else if (_enemy.fireType == true)
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else if (_enemy.windType == true)
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else
         {
@@ -54,19 +54,19 @@ public class PlayerAttack : MonoBehaviour
         {
             _enemy.TakeDamage(_dmgAmount * 2);
             _playerLog.color = Color.green;
-            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
         else if (_enemy.earthType == true) 
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else if (_enemy.windType == true)
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else
         {
@@ -85,19 +85,19 @@ public class PlayerAttack : MonoBehaviour
         {
             _enemy.TakeDamage(_dmgAmount * 2);
             _playerLog.color = Color.green;
-            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
         else if (_enemy.waterType == true)
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else if (_enemy.windType == true)
         {
             _enemy.TakeDamage(_dmgAmount / 2);
             _playerLog.color = Color.red;
-            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else 
         {
@@ -115,7 +115,7 @@ public class PlayerAttack : MonoBehaviour
         {
             _enemy.TakeDamage(_dmgAmount * 2);
             _playerLog.color = Color.green;
-            _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
+            _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
         else
         {
