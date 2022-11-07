@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d594f2c1d5a8c4091d3229f2d7dfbe, type: 3}
-  m_Name: Enemy_FireSlime
+  m_Name: Enemy_EarthSlime
   m_EditorClassIdentifier: 
-  enemyName: Fire Slime
-  portrait: {fileID: 21300000, guid: 406c0315091280848ab2652f9b680515, type: 3}
-  portrait2: {fileID: 21300000, guid: aa2270d145c490f4f9dd466032ab24fd, type: 3}
-  portraitAttack: {fileID: 21300000, guid: fdbf978ab19a21f4487e884398982520, type: 3}
+  enemyName: Earth Slime
+  portrait: {fileID: 21300000, guid: f12d759fd941c6f4fbe3f6bb7aa6ec8e, type: 3}
+  portrait2: {fileID: 21300000, guid: fe948eedd07039e48b6081e4ad5cb731, type: 3}
+  portraitAttack: {fileID: 21300000, guid: bd44d6577280f2942a259813cda74f60, type: 3}
   enemyHealth: 50
-  fireType: 1
-  earthType: 0
+  fireType: 0
+  earthType: 1
   waterType: 0
   windType: 0
   attack1Name: SLIME BASH
-  attack1Damage: 10
+  attack1Damage: 15
   attack2Name: SPOOGE
-  attack2Damage: 20
+  attack2Damage: 30
   attack3Name: GOOP GRAB
   attack3Damage: 50
   attack4Name: POOPLE
-  attack4Damage: 2
+  attack4Damage: 75

@@ -13,6 +13,8 @@ public class EnemyData : ScriptableObject
 
     [Header("Enemy Sprite Portrait")]
     [SerializeField] public Sprite portrait = null;
+    [SerializeField] public Sprite portrait2 = null;
+    [SerializeField] public Sprite portraitAttack = null;
 
     [Header("Enemy HP")]
     [SerializeField] public int enemyHealth = 1;

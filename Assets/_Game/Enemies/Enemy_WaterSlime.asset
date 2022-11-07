@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d594f2c1d5a8c4091d3229f2d7dfbe, type: 3}
-  m_Name: Enemy_FireSlime
+  m_Name: Enemy_WaterSlime
   m_EditorClassIdentifier: 
-  enemyName: Fire Slime
-  portrait: {fileID: 21300000, guid: 406c0315091280848ab2652f9b680515, type: 3}
-  portrait2: {fileID: 21300000, guid: aa2270d145c490f4f9dd466032ab24fd, type: 3}
-  portraitAttack: {fileID: 21300000, guid: fdbf978ab19a21f4487e884398982520, type: 3}
+  enemyName: Water Slime
+  portrait: {fileID: 21300000, guid: dfc86aec3e49d344cb4a76e76442fc7f, type: 3}
+  portrait2: {fileID: 21300000, guid: bbe5ea9160c90a6428298b6bddaac0fd, type: 3}
+  portraitAttack: {fileID: 21300000, guid: 80d3ca98c1d3bd54a8b8ee4caaa928f4, type: 3}
   enemyHealth: 50
-  fireType: 1
+  fireType: 0
   earthType: 0
-  waterType: 0
+  waterType: 1
   windType: 0
   attack1Name: SLIME BASH
   attack1Damage: 10

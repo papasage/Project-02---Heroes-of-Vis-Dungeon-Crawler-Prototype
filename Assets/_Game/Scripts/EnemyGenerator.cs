@@ -23,6 +23,8 @@ public class EnemyGenerator : MonoBehaviour
     {
         _enemy.enemyName = enemyData.enemyName;
         _enemy.portrait = enemyData.portrait;
+        _enemy.portrait2 = enemyData.portrait2;
+        _enemy.portraitAttack = enemyData.portraitAttack;
         _enemy.enemyMaxHealth = enemyData.enemyHealth;
         _enemy.attackname1 = enemyData.attack1Name;
         _enemy.attackdmg1 = enemyData.attack1Damage;
