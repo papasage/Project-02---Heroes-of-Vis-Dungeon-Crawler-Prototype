@@ -15,18 +15,37 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _healthText.color = Color.white;
-        playerHealth = _maxHealth;
+        
+
+        roomCount = PlayerPrefs.GetInt("RoomCount");
+
+        if (roomCount <= 1)
+        {
+            playerHealth = _maxHealth;
+        }
+
+        else playerHealth = PlayerPrefs.GetInt("PlayerHealth",_maxHealth);
+
 
     }
 
     public void TakeDamage(int _amount)
     {
         playerHealth -= _amount;
+
+        //Save the Player's Health
+        PlayerPrefs.SetInt("PlayerHealth", playerHealth);
+        PlayerPrefs.Save();
     }
 
     public void HealDamage(int _amount)
     {
+
         playerHealth += _amount;
+
+        //Save the Player's Health
+        PlayerPrefs.SetInt("PlayerHealth", playerHealth);
+        PlayerPrefs.Save();
     }
 
     private void Update()
@@ -40,5 +59,11 @@ public class PlayerHealth : MonoBehaviour
             _playerLog.gameObject.SetActive(true);
             _playerLog.text = "Flint has died!";
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("PlayerHealth", 0);
+        PlayerPrefs.Save();
     }
 }

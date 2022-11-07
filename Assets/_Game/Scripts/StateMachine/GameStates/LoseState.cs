@@ -20,6 +20,9 @@ public class LoseState : RPGState
         _gameoverMenu.gameObject.SetActive(true);
         _music.DefeatMusic();
         _roomProgression.ResetRooms();
+
+        PlayerPrefs.SetInt("PlayerHealth", 0);
+        PlayerPrefs.Save();
     }
 
     public override void Exit()
@@ -29,6 +32,9 @@ public class LoseState : RPGState
 
     public void ReturnToMainMenu()
     {
+        PlayerPrefs.SetInt("PlayerHealth", 0);
+        PlayerPrefs.Save();
+        _roomProgression.ResetRooms();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

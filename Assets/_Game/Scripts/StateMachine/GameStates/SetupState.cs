@@ -15,7 +15,8 @@ public class SetupState : RPGState
     [SerializeField] GameObject _enemySprite;
     [SerializeField] EnemyGenerator _enemyGenerator;
     [SerializeField] RoomProgression _roomProgression;
-    [SerializeField] TextMeshProUGUI _roomCountText;
+    [SerializeField] TextMeshProUGUI _roomSetupCount;
+    [SerializeField] TextMeshProUGUI _roomCounter;
 
     bool _activated = true;
 
@@ -28,6 +29,8 @@ public class SetupState : RPGState
         StartCoroutine(EnemyAppearsMessage(_pauseDuration));
 
         _enemyGenerator.GenerateEnemy();
+
+        _roomCounter.text = _roomProgression.roomCount.ToString();
     }
 
     public override void Tick()
@@ -50,13 +53,14 @@ public class SetupState : RPGState
     {
         //Setup message on
         _setupWindow.SetActive(true);
-        _roomCountText.text = "ROOM " + _roomProgression.roomCount.ToString();
+        _roomSetupCount.text = "ROOM " + _roomProgression.roomCount.ToString();
         //_sfx.MonsterCrySFX();
 
         yield return new WaitForSeconds(pauseDuration);
         _setupWindow.SetActive(false);
         //Setup message off
         _enemySprite.SetActive(true);
+        _enemy.StartCoroutine(_enemy.IdleDance(_enemy._idleDanceTime, _enemy.portrait, _enemy.portrait2));
 
         StateMachine.ChangeState<PlayerTurnState>();
     }

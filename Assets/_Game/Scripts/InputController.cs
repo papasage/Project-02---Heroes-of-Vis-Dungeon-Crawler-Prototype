@@ -10,6 +10,8 @@ public class InputController : MonoBehaviour
     public event Action PressedLeft = delegate { };
     public event Action PressedRight = delegate { };
 
+    [SerializeField] GameObject quitMenu;
+
     private void Update()
     {
         DetectConfirm();
@@ -38,6 +40,7 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            quitMenu.SetActive(true);
             PressedCancel?.Invoke();
         }
     }
@@ -49,4 +52,6 @@ public class InputController : MonoBehaviour
             PressedConfirm?.Invoke();
         }
     }
+
+    
 }

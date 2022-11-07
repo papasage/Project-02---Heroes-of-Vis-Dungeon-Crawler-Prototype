@@ -12,6 +12,7 @@ public class WinState : RPGState
     [SerializeField] MusicManager _music;
     [SerializeField] GameObject _enemySprite;
     [SerializeField] RoomProgression _roomProgression;
+    [SerializeField] PlayerHealth _playerHealth;
 
     public override void Enter() 
     {
@@ -21,6 +22,9 @@ public class WinState : RPGState
         _playerTurnTextUI.gameObject.SetActive(false);
         _victoryMenu.gameObject.SetActive(true);
         _music.VictoryMusic();
+
+        PlayerPrefs.SetInt("PlayerHealth", _playerHealth.playerHealth);
+        PlayerPrefs.Save();
     }
 
     public override void Exit() 
