@@ -26,9 +26,24 @@ public class PlayerAttack : MonoBehaviour
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
         }
-        else _enemy.TakeDamage(_dmgAmount);
-             _playerLog.color = Color.white;
-             _playerLog.text = "Flint used: " + _attackName;
+        else if (_enemy.fireType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount / 2);
+            _playerLog.color = Color.red;
+            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+        }
+        else if (_enemy.windType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount / 2);
+            _playerLog.color = Color.red;
+            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+        }
+        else
+        {
+            _enemy.TakeDamage(_dmgAmount);
+            _playerLog.color = Color.white;
+            _playerLog.text = "Flint used: " + _attackName;
+        }
     }
     public void Earth(string _attackName, int _dmgAmount)
     {
@@ -41,9 +56,25 @@ public class PlayerAttack : MonoBehaviour
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
         }
-        else _enemy.TakeDamage(_dmgAmount);
-        _playerLog.color = Color.white;
-        _playerLog.text = "Flint used: " + _attackName;
+        else if (_enemy.earthType == true) 
+        {
+            _enemy.TakeDamage(_dmgAmount / 2);
+            _playerLog.color = Color.red;
+            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+        }
+        else if (_enemy.windType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount / 2);
+            _playerLog.color = Color.red;
+            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+        }
+        else
+        {
+            _enemy.TakeDamage(_dmgAmount);
+            _playerLog.color = Color.white;
+            _playerLog.text = "Flint used: " + _attackName;
+        }
+
     } 
     public void Water(string _attackName, int _dmgAmount)
     {
@@ -56,10 +87,25 @@ public class PlayerAttack : MonoBehaviour
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
         }
-        else _enemy.TakeDamage(_dmgAmount);
+        else if (_enemy.waterType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount / 2);
+            _playerLog.color = Color.red;
+            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+        }
+        else if (_enemy.windType == true)
+        {
+            _enemy.TakeDamage(_dmgAmount / 2);
+            _playerLog.color = Color.red;
+            _playerLog.text = "Flint used: " + _attackName + "...it's suboptimal...";
+        }
+        else 
+        {
+            _enemy.TakeDamage(_dmgAmount);
         _playerLog.color = Color.white;
         _playerLog.text = "Flint used: " + _attackName;
-    } 
+        }
+        } 
     public void Wind(string _attackName, int _dmgAmount)
     {
         //wind attacks crit on wind elementals
@@ -71,8 +117,12 @@ public class PlayerAttack : MonoBehaviour
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "...it's effective!";
         }
-        else _enemy.TakeDamage(_dmgAmount);
-        _playerLog.color = Color.white;
-        _playerLog.text = "Flint used: " + _attackName;
+        else
+        {
+            _enemy.TakeDamage(_dmgAmount);
+            _playerLog.color = Color.white;
+            _playerLog.text = "Flint used: " + _attackName;
+        }
+        
     }
 }

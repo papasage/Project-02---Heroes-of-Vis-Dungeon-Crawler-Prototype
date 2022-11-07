@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
     {
         //ENEMY THINKING START
         _enemyLog.gameObject.SetActive(true);
-        _enemyLog.text = "Enemy attacks with " + attackName + "!"; 
+        _enemyLog.text = enemyName + " uses " + attackName + "!"; 
         //this is where the enemy will choose attack 1 or 2
 
         yield return new WaitForSeconds(pauseDuration);
