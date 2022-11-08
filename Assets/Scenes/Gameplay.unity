@@ -1747,6 +1747,7 @@ MonoBehaviour:
   _music: {fileID: 1797664308}
   _enemySprite: {fileID: 1127562398}
   _roomProgression: {fileID: 957011093}
+  roomGoal: 0
   _playerHealth: {fileID: 474820312}
 --- !u!1 &219276013
 GameObject:
@@ -1907,7 +1908,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 1/10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51f9636a3e25de247aab01ae3b86db44, type: 2}
   m_sharedMaterial: {fileID: 6639871314865003398, guid: 51f9636a3e25de247aab01ae3b86db44, type: 2}
@@ -1940,7 +1941,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 1024
   m_textAlignment: 65535

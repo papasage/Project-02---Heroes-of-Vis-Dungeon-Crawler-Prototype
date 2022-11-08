@@ -31,7 +31,7 @@ public class SetupState : RPGState
 
         _enemyGenerator.GenerateEnemy();
 
-        _roomCounter.text = _roomProgression.roomCount.ToString();
+        _roomCounter.text = _roomProgression.roomCount.ToString() + "/" + PlayerPrefs.GetInt("RoomGoal");
     }
 
     public override void Tick()
