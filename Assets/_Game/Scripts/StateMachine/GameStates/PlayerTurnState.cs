@@ -10,6 +10,7 @@ public class PlayerTurnState : RPGState
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] GameObject _attackMenu;
     [SerializeField] Text _playerLog;
+
     [SerializeField] PlayerAttack _playerattack;
     [SerializeField] Enemy _enemy;
 

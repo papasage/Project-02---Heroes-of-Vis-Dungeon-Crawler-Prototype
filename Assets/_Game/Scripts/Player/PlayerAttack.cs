@@ -14,11 +14,19 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Text _playerLog;
     [SerializeField] SFXManager _sfx;
 
+    [SerializeField] public Image _playerLogSymbol;
+    [SerializeField] public Sprite _fireSymbol;
+    [SerializeField] public Sprite _earthSymbol;
+    [SerializeField] public Sprite _waterSymbol;
+    [SerializeField] public Sprite _windSymbol;
+    [SerializeField] public Sprite _deathSymbol;
+
 
     public void Fire(string _attackName, int _dmgAmount)
     {
         //fire attacks crit on eath elementals
         _sfx.FireSFX();
+        _playerLogSymbol.sprite = _fireSymbol;
 
         if (_enemy.earthType == true)
         {
@@ -49,6 +57,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //earth attacks crit on water elementals
         _sfx.EarthSFX();
+        _playerLogSymbol.sprite = _earthSymbol;
 
         if (_enemy.waterType == true)
         {
@@ -74,6 +83,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //water attacks crit on fire elementals
         _sfx.WaterSFX();
+        _playerLogSymbol.sprite = _waterSymbol;
 
         if (_enemy.fireType == true)
         {
@@ -104,6 +114,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //wind attacks crit on wind elementals
         _sfx.WindSFX();
+        _playerLogSymbol.sprite = _windSymbol;
 
         if (_enemy.windType == true)
         {

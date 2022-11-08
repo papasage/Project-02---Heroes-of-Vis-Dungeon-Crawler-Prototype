@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] TextMeshProUGUI _healthText;
     [SerializeField] Text _playerLog;
     [SerializeField] int roomCount;
+    [SerializeField] PlayerAttack _playerAttack;
 
     private void Start()
     {
@@ -57,6 +58,7 @@ public class PlayerHealth : MonoBehaviour
             _healthText.color = Color.red;
             _healthText.text = "DECEASED";
             _playerLog.gameObject.SetActive(true);
+            _playerAttack._playerLogSymbol.sprite = _playerAttack._deathSymbol;
             _playerLog.text = "Flint has died!";
         }
     }
