@@ -12,6 +12,7 @@ public class WinState : RPGState
     [SerializeField] MusicManager _music;
     [SerializeField] GameObject _enemySprite;
     [SerializeField] RoomProgression _roomProgression;
+    [SerializeField] int roomGoal;
     [SerializeField] PlayerHealth _playerHealth;
 
     public override void Enter() 
@@ -22,6 +23,8 @@ public class WinState : RPGState
         _playerTurnTextUI.gameObject.SetActive(false);
         _victoryMenu.gameObject.SetActive(true);
         _music.VictoryMusic();
+
+        roomGoal = PlayerPrefs.GetInt("RoomGoal");
 
         PlayerPrefs.SetInt("PlayerHealth", _playerHealth.playerHealth);
         PlayerPrefs.Save();
@@ -37,6 +40,11 @@ public class WinState : RPGState
     public void Continue()
     {
         //reload current scene (NEEDS A BETTER SOLUTION FOR ADDING TO ROOM COUNT)
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (_roomProgression.roomCount == roomGoal)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

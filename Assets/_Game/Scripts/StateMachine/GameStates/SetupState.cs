@@ -23,6 +23,7 @@ public class SetupState : RPGState
     public override void Enter()
     {
         Debug.Log("Setup: ...Entering");
+        Debug.Log("Room Goal " + PlayerPrefs.GetInt("RoomGoal"));
         _roomProgression.NewRoom();
 
         _enemySprite.SetActive(false);
