@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d594f2c1d5a8c4091d3229f2d7dfbe, type: 3}
+  m_Name: Enemy_ForestNymph
+  m_EditorClassIdentifier: 
+  enemyName: Forest Nymph
+  portrait: {fileID: 21300000, guid: 862a0612dd4c9d14bbb59e1e73e55b17, type: 3}
+  portrait2: {fileID: 21300000, guid: 48442d55ee63e3847aa849546267f227, type: 3}
+  portraitAttack: {fileID: 21300000, guid: d5aa3cd4bfc3bc447951afa293d1c747, type: 3}
+  enemyHealth: 50
+  fireType: 0
+  earthType: 1
+  waterType: 0
+  windType: 0
+  attack1Name: SPORE
+  attack1Damage: 25
+  attack2Name: BASH
+  attack2Damage: 15
+  attack3Name: ROOT THRUST
+  attack3Damage: 10
+  attack4Name: EARTH SHATTER
+  attack4Damage: 50

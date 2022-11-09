@@ -22,10 +22,10 @@ MonoBehaviour:
   waterType: 0
   windType: 1
   attack1Name: SLIME BASH
-  attack1Damage: 10
+  attack1Damage: 25
   attack2Name: SPOOGE
-  attack2Damage: 20
+  attack2Damage: 15
   attack3Name: GOOP GRAB
-  attack3Damage: 50
+  attack3Damage: 10
   attack4Name: POOPLE
-  attack4Damage: 2
+  attack4Damage: 50

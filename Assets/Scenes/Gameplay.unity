@@ -1660,6 +1660,7 @@ MonoBehaviour:
   _roomProgression: {fileID: 957011093}
   _roomSetupCount: {fileID: 691919111}
   _roomCounter: {fileID: 241312626}
+  _music: {fileID: 1797664308}
 --- !u!114 &209009438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,6 +4001,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e7d1fa1fbe0cbb74891eb46477c56cb1, type: 2}
   - {fileID: 11400000, guid: ad56f5be02fb93447949f207ca977447, type: 2}
   - {fileID: 11400000, guid: 7d7176815548fb7469825f3c2bdfd77d, type: 2}
+  - {fileID: 11400000, guid: c38f482d1b95d7d45b54179db7a373b0, type: 2}
+  - {fileID: 11400000, guid: 713e64f971124844fbf25ee8d719ac87, type: 2}
+  - {fileID: 11400000, guid: 9fa1e1781038f0f4b875b8d7831b1db0, type: 2}
+  bosses:
+  - {fileID: 11400000, guid: 83fda2f9060fc2e49b096f3946cb547e, type: 2}
 --- !u!1 &827540829
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,7 +8273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _battleMusic: {fileID: 8300000, guid: ae7123b66fd982e45b178ecf9bc98fde, type: 3}
-  _bossBattleMusic: {fileID: 8300000, guid: b7f4c88ce7708d94c933e4c3168a0aea, type: 3}
+  _bossBattleMusic: {fileID: 8300000, guid: 8741404526ad6c4448134bb6fa06a3a8, type: 3}
   _victoryMusic: {fileID: 8300000, guid: 9e7bc622b805d97449c4ac971d88664c, type: 3}
   _defeatMusic: {fileID: 8300000, guid: 5b8fb56ae3e196d4ba5a0a0aa5b07a61, type: 3}
 --- !u!1 &1809802808

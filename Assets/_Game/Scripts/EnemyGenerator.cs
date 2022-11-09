@@ -6,6 +6,7 @@ public class EnemyGenerator : MonoBehaviour
 {
     [SerializeField] Enemy _enemy;
     [SerializeField] EnemyData[] enemies;
+    [SerializeField] EnemyData[] bosses;
     EnemyData _chosenEnemy;
     int index;
 
@@ -15,6 +16,15 @@ public class EnemyGenerator : MonoBehaviour
         index = Random.Range(0, enemies.Length);
         
         _chosenEnemy = enemies[index];
+
+        EnemyAppear(_chosenEnemy);
+    }
+
+    public void GenerateBoss()
+    {
+        index = Random.Range(0, bosses.Length);
+
+        _chosenEnemy = bosses[index];
 
         EnemyAppear(_chosenEnemy);
     }

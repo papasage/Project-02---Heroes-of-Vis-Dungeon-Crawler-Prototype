@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d594f2c1d5a8c4091d3229f2d7dfbe, type: 3}
+  m_Name: Enemy_Crier
+  m_EditorClassIdentifier: 
+  enemyName: Crier
+  portrait: {fileID: 21300000, guid: 5cdb2f7511f92744d98f0f9aa6aa0c50, type: 3}
+  portrait2: {fileID: 21300000, guid: 648bd09fd5b916c4588f5076275829cf, type: 3}
+  portraitAttack: {fileID: 21300000, guid: fd577e9acdeb62240835bee7b2ab6c0f, type: 3}
+  enemyHealth: 69
+  fireType: 0
+  earthType: 0
+  waterType: 0
+  windType: 1
+  attack1Name: TEARJERK
+  attack1Damage: 20
+  attack2Name: BAWL
+  attack2Damage: 30
+  attack3Name: KEEN
+  attack3Damage: 25
+  attack4Name: WEEP
+  attack4Damage: 20

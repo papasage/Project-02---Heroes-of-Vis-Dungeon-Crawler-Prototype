@@ -17,8 +17,12 @@ public class SetupState : RPGState
     [SerializeField] RoomProgression _roomProgression;
     [SerializeField] TextMeshProUGUI _roomSetupCount;
     [SerializeField] TextMeshProUGUI _roomCounter;
+    [SerializeField] MusicManager _music;
 
     bool _activated = true;
+    bool _minionEncounter = false;
+    bool _bossEncounter = false;
+    bool _musicPlaying = false;
 
     public override void Enter()
     {
@@ -29,7 +33,18 @@ public class SetupState : RPGState
         _enemySprite.SetActive(false);
         StartCoroutine(EnemyAppearsMessage(_pauseDuration));
 
-        _enemyGenerator.GenerateEnemy();
+        if (_roomProgression.roomCount % 5 == 0)
+        {
+            _bossEncounter = true;
+            _enemyGenerator.GenerateBoss();
+            _roomCounter.color = Color.red;
+        }
+        else
+        {
+            _minionEncounter = true;
+            _enemyGenerator.GenerateEnemy();
+            _roomCounter.color = Color.white;
+        }
 
         _roomCounter.text = _roomProgression.roomCount.ToString() + "/" + PlayerPrefs.GetInt("RoomGoal");
     }
@@ -42,6 +57,18 @@ public class SetupState : RPGState
         {
             _activated = true;
             
+        }
+
+        if (_bossEncounter == true && _musicPlaying == false)
+        {
+            _music.BossBattleMusic();
+            _musicPlaying = true;
+        }
+
+        if (_minionEncounter == true && _musicPlaying == false)
+        {
+            _music.BattleMusic();
+            _musicPlaying = true;
         }
     }
 
