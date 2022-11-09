@@ -58,28 +58,28 @@ public class Enemy : MonoBehaviour
 
     public void Attack1()
     {
-        StartCoroutine(AttackAnimation(_pauseDuration, portraitAttack));
+        StartCoroutine(AttackAnimation(_attackDuration, portraitAttack));
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname1));
         _player.TakeDamage(attackdmg1);
     } 
     public void Attack2()
     {
-        StartCoroutine(AttackAnimation(_pauseDuration, portraitAttack));
+        StartCoroutine(AttackAnimation(_attackDuration, portraitAttack));
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname2));
         _player.TakeDamage(attackdmg2);
     }
     public void Attack3()
     {
-        StartCoroutine(AttackAnimation(_pauseDuration, portraitAttack));
+        StartCoroutine(AttackAnimation(_attackDuration, portraitAttack));
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname3));
         _player.TakeDamage(attackdmg3);
     }
     public void Attack4()
     {
-        StartCoroutine(AttackAnimation(_pauseDuration, portraitAttack));
+        StartCoroutine(AttackAnimation(_attackDuration, portraitAttack));
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname4));
         _player.TakeDamage(attackdmg4);
@@ -110,6 +110,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator AttackAnimation (float _attackTime, Sprite _attack)
     {
+        StopCoroutine("IdleDance");
         _spriteRenderer.sprite = _attack;
         yield return new WaitForSeconds(_attackTime);
         StartCoroutine(IdleDance( _idleDanceTime, portrait, portrait2));
