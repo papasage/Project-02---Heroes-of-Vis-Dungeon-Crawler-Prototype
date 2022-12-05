@@ -41,19 +41,22 @@ public class Enemy : MonoBehaviour
     [SerializeField] public bool fireType; 
     [SerializeField] public bool earthType; 
     [SerializeField] public bool waterType; 
-    [SerializeField] public bool windType; 
+    [SerializeField] public bool windType;
+
+    [Header("Screen Shake")]
+    [SerializeField] public CameraShake cameraShake;
 
     private void Start()
     {
         _enemyNameText.text = enemyName;
         enemyHealth = enemyMaxHealth;
-        
     }
 
     
     public void TakeDamage(int _amount)
     {
         enemyHealth -= _amount;
+        StartCoroutine(cameraShake.Shake(.2f, 5f)); 
     }
 
     public void Attack1()
@@ -62,6 +65,7 @@ public class Enemy : MonoBehaviour
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname1));
         _player.TakeDamage(attackdmg1);
+        PlayerDamageShake();
     } 
     public void Attack2()
     {
@@ -69,6 +73,7 @@ public class Enemy : MonoBehaviour
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname2));
         _player.TakeDamage(attackdmg2);
+        PlayerDamageShake();
     }
     public void Attack3()
     {
@@ -76,6 +81,7 @@ public class Enemy : MonoBehaviour
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname3));
         _player.TakeDamage(attackdmg3);
+        PlayerDamageShake();
     }
     public void Attack4()
     {
@@ -83,6 +89,7 @@ public class Enemy : MonoBehaviour
         _sfx.SlashSFX();
         StartCoroutine(PrintLog(_attackDuration, attackname4));
         _player.TakeDamage(attackdmg4);
+        PlayerDamageShake();
     }
 
     IEnumerator PrintLog(float pauseDuration, string attackName)
@@ -130,5 +137,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-  
+  void PlayerDamageShake()
+    {
+        StartCoroutine(cameraShake.Shake(.6f, 10f));
+    }
 }
