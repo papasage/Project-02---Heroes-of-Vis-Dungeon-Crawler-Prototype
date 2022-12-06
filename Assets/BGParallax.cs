@@ -7,7 +7,13 @@ public class BGParallax : MonoBehaviour
 {
     Vector2 _position;
     Vector2 _startPosition;
-    public int moveModifier;
+    private float posX;
+    private float posY;
+
+    public int moveModifier = 20;
+    public int reactionSpeed = 5;
+
+    public bool _followMouse;
 
     private void Start()
     {
@@ -18,10 +24,21 @@ public class BGParallax : MonoBehaviour
     {
         _position = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        float posX = Mathf.Lerp(transform.position.x, _startPosition.x + (_position.x * moveModifier), 2f * Time.deltaTime);
-        float posY = Mathf.Lerp(transform.position.y, _startPosition.y + (_position.y * moveModifier), 2f * Time.deltaTime);
+        if (_followMouse == true)
+        {
+            float posX = Mathf.Lerp(transform.position.x, _startPosition.x + (_position.x * moveModifier), reactionSpeed * Time.deltaTime);
+            float posY = Mathf.Lerp(transform.position.y, _startPosition.y + (_position.y * moveModifier), reactionSpeed * Time.deltaTime);
+            transform.position = new Vector3(posX, posY, 0);
+        }
+        else
+        {
+            float posX = Mathf.Lerp(transform.position.x, _startPosition.x - (_position.x * moveModifier), reactionSpeed * Time.deltaTime);
+            float posY = Mathf.Lerp(transform.position.y, _startPosition.y - (_position.y * moveModifier), reactionSpeed * Time.deltaTime);
+            transform.position = new Vector3(posX, posY, 0);
+        }
 
-        transform.position = new Vector3(posX, posY, 0);
+
+        
     }
 
 }
