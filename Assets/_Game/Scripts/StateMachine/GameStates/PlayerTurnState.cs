@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerTurnState : RPGState
 {
     [SerializeField] Text _playerTurnTextUI = null;
-    [SerializeField] Text _playerAttackAnimation = null;
+    [SerializeField] Image _playerAttackAnimation = null;
     [SerializeField] float _pauseDuration = 1.5f;
     [SerializeField] GameObject _attackMenu;
     [SerializeField] Text _playerLog;
@@ -16,6 +16,16 @@ public class PlayerTurnState : RPGState
 
     int _playerTurnCount = 0;
     bool _playerAttackOver = false;
+
+    //Attack animation stuff
+
+    [SerializeField] Image _attackRenderer;
+
+    [SerializeField] Sprite _windAttack;
+    [SerializeField] Sprite _waterAttack;
+    [SerializeField] Sprite _fireAttack;
+    [SerializeField] Sprite _earthAttack;
+
 
     public override void Enter()
     {
@@ -74,6 +84,7 @@ public class PlayerTurnState : RPGState
     {
         //Player uses first attack
         _playerattack.Fire("FLARE" , 30);
+        _attackRenderer.sprite = _fireAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
 
@@ -81,6 +92,7 @@ public class PlayerTurnState : RPGState
     {
         //Player uses second attack
         _playerattack.Earth("BREAKER" , 30);
+        _attackRenderer.sprite = _earthAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
 
@@ -88,6 +100,7 @@ public class PlayerTurnState : RPGState
     {
         //Player uses third attack
         _playerattack.Water("DROWN" , 30);
+        _attackRenderer.sprite = _waterAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
 
@@ -95,6 +108,7 @@ public class PlayerTurnState : RPGState
     {
         //Player uses fourth attack
         _playerattack.Wind("VACUUM" , 30);
+        _attackRenderer.sprite = _windAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
         
     }
@@ -117,6 +131,9 @@ public class PlayerTurnState : RPGState
         //disable player turn text
         _playerTurnTextUI.gameObject.SetActive(false);
         _attackMenu.SetActive(false);
+
+        //Set Attack Visual Here
+
 
         //ATTACK ANIMATION START
         _playerAttackAnimation.gameObject.SetActive(true);
