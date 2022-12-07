@@ -14,6 +14,8 @@ public class PlayerTurnState : RPGState
     [SerializeField] PlayerAttack _playerattack;
     [SerializeField] Enemy _enemy;
 
+    [SerializeField] int _playerDamage;
+
     int _playerTurnCount = 0;
     bool _playerAttackOver = false;
 
@@ -83,7 +85,7 @@ public class PlayerTurnState : RPGState
     public void OnPressedAttackOne()
     {
         //Player uses first attack
-        _playerattack.Fire("FLARE" , 30);
+        _playerattack.Fire("FLARE" , _playerDamage);
         _attackRenderer.sprite = _fireAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
@@ -91,7 +93,7 @@ public class PlayerTurnState : RPGState
     public void OnPressedAttackTwo()
     {
         //Player uses second attack
-        _playerattack.Earth("BREAKER" , 30);
+        _playerattack.Earth("BREAKER" , _playerDamage);
         _attackRenderer.sprite = _earthAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
@@ -99,7 +101,7 @@ public class PlayerTurnState : RPGState
     public void OnPressedAttackThree()
     {
         //Player uses third attack
-        _playerattack.Water("DROWN" , 30);
+        _playerattack.Water("DROWN" , _playerDamage);
         _attackRenderer.sprite = _waterAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
     }
@@ -107,7 +109,7 @@ public class PlayerTurnState : RPGState
     public void OnPressedAttackFour()
     {
         //Player uses fourth attack
-        _playerattack.Wind("VACUUM" , 30);
+        _playerattack.Wind("VACUUM" , _playerDamage);
         _attackRenderer.sprite = _windAttack;
         StartCoroutine(PlayerAttackAnimation(_pauseDuration));
         

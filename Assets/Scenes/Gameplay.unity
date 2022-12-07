@@ -1969,6 +1969,7 @@ MonoBehaviour:
   _playerLog: {fileID: 581930101}
   _playerattack: {fileID: 474820313}
   _enemy: {fileID: 513295884}
+  _playerDamage: 20
   _attackRenderer: {fileID: 1772506204}
   _windAttack: {fileID: 21300000, guid: ac57b20723e76364c829d28a718fd762, type: 3}
   _waterAttack: {fileID: 21300000, guid: e76f20564ce39e74c8233be94f576b62, type: 3}
@@ -2129,7 +2130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &220874090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2908,8 +2909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19845595d7a0caf4fa67cea52727478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  playerHealth: 100
+  _maxHealth: 175
+  playerHealth: 175
   _healthText: {fileID: 1934514576}
   _playerLog: {fileID: 581930101}
   roomCount: 0

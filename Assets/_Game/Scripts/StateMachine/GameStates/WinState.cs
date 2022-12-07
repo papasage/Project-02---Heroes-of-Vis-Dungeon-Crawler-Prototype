@@ -34,7 +34,10 @@ public class WinState : RPGState
         roomGoal = PlayerPrefs.GetInt("RoomGoal");
 
         PlayerPrefs.SetInt("PlayerHealth", _playerHealth.playerHealth);
+
         PlayerPrefs.Save();
+
+        
     }
 
     public override void Exit() 

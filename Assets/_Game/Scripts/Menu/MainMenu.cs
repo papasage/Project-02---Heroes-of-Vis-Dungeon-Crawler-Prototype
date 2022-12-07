@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     public void ReturnMainMenu()
     {
         PlayerPrefs.SetInt("RoomCount", 0);
+        PlayerPrefs.SetInt("dmgMulti", 1);
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
