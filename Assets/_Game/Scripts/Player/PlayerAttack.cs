@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Enemy _enemy;
     [SerializeField] Text _playerLog;
     [SerializeField] SFXManager _sfx;
+    [SerializeField] PlayerDamage _damage;
+    [SerializeField] int _dmgMulti;
 
     [SerializeField] public Image _playerLogSymbol;
     [SerializeField] public Sprite _fireSymbol;
@@ -27,6 +29,10 @@ public class PlayerAttack : MonoBehaviour
         //fire attacks crit on eath elementals
         _sfx.FireSFX();
         _playerLogSymbol.sprite = _fireSymbol;
+
+        //APPLY DAMAGE MULTI HERE
+        _dmgMulti = PlayerPrefs.GetInt("dmgMulti");
+        _dmgAmount = _dmgAmount * _dmgMulti;
 
         if (_enemy.earthType == true)
         {
@@ -59,9 +65,13 @@ public class PlayerAttack : MonoBehaviour
         _sfx.EarthSFX();
         _playerLogSymbol.sprite = _earthSymbol;
 
+        //APPLY DAMAGE MULTI HERE
+        _dmgMulti = PlayerPrefs.GetInt("dmgMulti");
+        _dmgAmount = _dmgAmount * _dmgMulti;
+
         if (_enemy.waterType == true)
         {
-            _enemy.TakeDamage(_dmgAmount * 2);
+            _enemy.TakeDamage(_dmgAmount* 2);
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
@@ -85,21 +95,25 @@ public class PlayerAttack : MonoBehaviour
         _sfx.WaterSFX();
         _playerLogSymbol.sprite = _waterSymbol;
 
+        //APPLY DAMAGE MULTI HERE
+        _dmgMulti = PlayerPrefs.GetInt("dmgMulti");
+        _dmgAmount = _dmgAmount * _dmgMulti;
+
         if (_enemy.fireType == true)
         {
-            _enemy.TakeDamage(_dmgAmount * 2);
+            _enemy.TakeDamage(_dmgAmount* 2);
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }
         else if (_enemy.waterType == true)
         {
-            _enemy.TakeDamage(_dmgAmount / 2);
+            _enemy.TakeDamage(_dmgAmount/ 2);
             _playerLog.color = Color.red;
             _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
         else if (_enemy.windType == true)
         {
-            _enemy.TakeDamage(_dmgAmount / 2);
+            _enemy.TakeDamage(_dmgAmount/ 2);
             _playerLog.color = Color.red;
             _playerLog.text = "Flint used: " + _attackName + "\n...it's suboptimal...";
         }
@@ -116,9 +130,13 @@ public class PlayerAttack : MonoBehaviour
         _sfx.WindSFX();
         _playerLogSymbol.sprite = _windSymbol;
 
+        //APPLY DAMAGE MULTI HERE
+        _dmgMulti = PlayerPrefs.GetInt("dmgMulti");
+        _dmgAmount = _dmgAmount * _dmgMulti;
+
         if (_enemy.windType == true)
         {
-            _enemy.TakeDamage(_dmgAmount * 2);
+            _enemy.TakeDamage(_dmgAmount* 2);
             _playerLog.color = Color.green;
             _playerLog.text = "Flint used: " + _attackName + "\n...it's effective!";
         }

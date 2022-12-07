@@ -14,8 +14,13 @@ public class RotateHoverUtil : MonoBehaviour
 
     [Header("Hover Settings")]
     [SerializeField] private bool canHover;
-    [SerializeField] private float amplitude = 0.05f; //hover intensity
-    [SerializeField] private float frequencey = 1f; //time needed for one cycle
+    [SerializeField] private float hoverAmp = 0.05f; //hover intensity
+    [SerializeField] private float hoverFreq = 1f; //time needed for one cycle
+                                                  
+    [Header("Wobble Settings")]
+    [SerializeField] private bool canWobble;
+    [SerializeField] private float wobbleAmp = 0.05f; //hover intensity
+    [SerializeField] private float wobbleFreq = 1f; //time needed for one cycle
 
     private Vector3 posOffset = new Vector3();
     private Vector3 tempPos = new Vector3();
@@ -48,8 +53,18 @@ public class RotateHoverUtil : MonoBehaviour
         {
             tempPos = posOffset;
 
-            _sine = Mathf.Sin(localTime * Mathf.PI * frequencey);
-            tempPos.y += (_sine * amplitude);
+            _sine = Mathf.Sin(localTime * Mathf.PI * hoverFreq);
+            tempPos.y += (_sine * hoverAmp);
+
+            transform.localPosition = tempPos;
+        }
+        
+        if (canWobble)
+        {
+            tempPos = posOffset;
+
+            _sine = Mathf.Sin(localTime * Mathf.PI * wobbleFreq);
+            tempPos.x += (_sine * wobbleAmp);
 
             transform.localPosition = tempPos;
         }

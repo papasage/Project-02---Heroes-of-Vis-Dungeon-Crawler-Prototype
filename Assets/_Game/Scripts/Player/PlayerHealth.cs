@@ -18,7 +18,6 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _healthText.color = Color.white;
-        
 
         roomCount = PlayerPrefs.GetInt("RoomCount");
 
@@ -46,6 +45,15 @@ public class PlayerHealth : MonoBehaviour
     {
 
         playerHealth += _amount;
+
+        //Save the Player's Health
+        PlayerPrefs.SetInt("PlayerHealth", playerHealth);
+        PlayerPrefs.Save();
+    }
+    public void RestoreHealth()
+    {
+
+        playerHealth = _maxHealth;
 
         //Save the Player's Health
         PlayerPrefs.SetInt("PlayerHealth", playerHealth);

@@ -2978,9 +2978,12 @@ MonoBehaviour:
   usesLocalTime: 1
   canRotate: 0
   degreesPerSecond: {x: 0, y: 0, z: 15}
-  canHover: 1
-  amplitude: 20.45
-  frequencey: 0.4
+  canHover: 0
+  hoverAmp: 0.05
+  hoverFreq: 1
+  canWobble: 0
+  wobbleAmp: 0.05
+  wobbleFreq: 1
 --- !u!1 &1458767469
 GameObject:
   m_ObjectHideFlags: 0

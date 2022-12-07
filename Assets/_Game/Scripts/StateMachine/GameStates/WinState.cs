@@ -9,6 +9,7 @@ public class WinState : RPGState
     [SerializeField] Text _playerTurnTextUI = null;
     [SerializeField] GameObject _attackMenu;
     [SerializeField] GameObject _victoryMenu;
+    [SerializeField] GameObject _bossVictoryMenu;
     [SerializeField] MusicManager _music;
     [SerializeField] GameObject _enemySprite;
     [SerializeField] RoomProgression _roomProgression;
@@ -21,7 +22,13 @@ public class WinState : RPGState
         _enemySprite.SetActive(false);
         _attackMenu.SetActive(false);
         _playerTurnTextUI.gameObject.SetActive(false);
-        _victoryMenu.gameObject.SetActive(true);
+
+        if (_roomProgression.roomCount % 5 == 0)
+        {
+            _bossVictoryMenu.gameObject.SetActive(true);
+        }
+        else _victoryMenu.gameObject.SetActive(true);
+        
         _music.VictoryMusic();
 
         roomGoal = PlayerPrefs.GetInt("RoomGoal");

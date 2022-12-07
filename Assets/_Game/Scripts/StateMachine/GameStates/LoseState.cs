@@ -12,6 +12,7 @@ public class LoseState : RPGState
     [SerializeField] GameObject _gameoverMenu;
     [SerializeField] MusicManager _music;
     [SerializeField] RoomProgression _roomProgression;
+    [SerializeField] PlayerDamage _playerDamage;
     [SerializeField] TextMeshProUGUI _livedToSee;
     [SerializeField] TextMeshProUGUI _killedBy;
     [SerializeField] Enemy _enemy;
@@ -28,6 +29,7 @@ public class LoseState : RPGState
 
         _music.DefeatMusic();
         _roomProgression.ResetRooms();
+        _playerDamage.ResetDamage();
 
         PlayerPrefs.SetInt("PlayerHealth", 0);
         PlayerPrefs.Save();
@@ -43,6 +45,7 @@ public class LoseState : RPGState
         PlayerPrefs.SetInt("PlayerHealth", 0);
         PlayerPrefs.Save();
         _roomProgression.ResetRooms();
+        _playerDamage.ResetDamage();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
