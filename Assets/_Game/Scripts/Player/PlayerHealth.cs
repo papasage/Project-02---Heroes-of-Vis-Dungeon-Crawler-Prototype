@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int roomCount;
     [SerializeField] PlayerAttack _playerAttack;
 
+    [SerializeField] CameraShake textShaker;
+
     private void Start()
     {
         _healthText.color = Color.white;
@@ -32,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int _amount)
     {
+        StartCoroutine(HealthShake());
         playerHealth -= _amount;
 
         //Save the Player's Health
@@ -67,5 +70,13 @@ public class PlayerHealth : MonoBehaviour
     {
         PlayerPrefs.SetInt("PlayerHealth", 0);
         PlayerPrefs.Save();
+    }
+
+    IEnumerator HealthShake()
+    {
+        _healthText.color = Color.red;
+        StartCoroutine(textShaker.Shake(1f, 10f));
+        yield return new WaitForSeconds(1f);
+        _healthText.color = Color.white;
     }
 }

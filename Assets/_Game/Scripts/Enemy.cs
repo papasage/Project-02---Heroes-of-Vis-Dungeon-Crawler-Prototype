@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     public int enemyHealth;
     [SerializeField] Image _spriteRenderer;
 
+    [SerializeField] CameraShake textShaker;
+
     //ScriptableObject Containers
     public string enemyName;
     public Sprite portrait;
@@ -56,6 +58,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int _amount)
     {
         enemyHealth -= _amount;
+        StartCoroutine(HealthShake());
         StartCoroutine(cameraShake.Shake(.2f, 5f)); 
     }
 
@@ -140,5 +143,14 @@ public class Enemy : MonoBehaviour
   void PlayerDamageShake()
     {
         StartCoroutine(cameraShake.Shake(.6f, 10f));
+    }
+
+
+    IEnumerator HealthShake()
+    {
+        _healthText.color = Color.red;
+        StartCoroutine(textShaker.Shake(1f, 10f));
+        yield return new WaitForSeconds(1f);
+        _healthText.color = Color.white;
     }
 }

@@ -2410,6 +2410,7 @@ MonoBehaviour:
   _playerLog: {fileID: 581930101}
   roomCount: 0
   _playerAttack: {fileID: 474820313}
+  textShaker: {fileID: 1934514578}
 --- !u!114 &474820313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2902,6 +2903,7 @@ MonoBehaviour:
   _sfx: {fileID: 481425586}
   enemyHealth: 50
   _spriteRenderer: {fileID: 1127562400}
+  textShaker: {fileID: 1500281486}
   enemyName: Demnii
   portrait: {fileID: 0}
   portrait2: {fileID: 0}
@@ -7121,6 +7123,7 @@ GameObject:
   - component: {fileID: 1500281483}
   - component: {fileID: 1500281485}
   - component: {fileID: 1500281484}
+  - component: {fileID: 1500281486}
   m_Layer: 5
   m_Name: EnemyHealth_txt
   m_TagString: Untagged
@@ -7245,6 +7248,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500281482}
   m_CullTransparentMesh: 1
+--- !u!114 &1500281486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500281482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b396c19306afbc94896f3e1476662281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1513924767
 GameObject:
   m_ObjectHideFlags: 0
@@ -9124,6 +9139,7 @@ GameObject:
   - component: {fileID: 1934514575}
   - component: {fileID: 1934514577}
   - component: {fileID: 1934514576}
+  - component: {fileID: 1934514578}
   m_Layer: 5
   m_Name: PlayerHealth_txt
   m_TagString: Untagged
@@ -9248,6 +9264,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934514574}
   m_CullTransparentMesh: 1
+--- !u!114 &1934514578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934514574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b396c19306afbc94896f3e1476662281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1943744368
 GameObject:
   m_ObjectHideFlags: 0

@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveModifier: 20
-  reactionSpeed: 5
+  reactionSpeed: 100
   _followMouse: 0
 --- !u!1 &319641436
 GameObject:
